@@ -1,4 +1,4 @@
-name: pplvl1
+name: python-project-lvl1
 
 on:
   - push
