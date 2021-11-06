@@ -9,3 +9,6 @@
 
 ### Asciinema brain-even
 [![asciicast brain-even](https://asciinema.org/a/447094.svg)](https://asciinema.org/a/447094)
+
+### Asciinema brain-calc
+[![asciicast brain-calc](https://asciinema.org/a/447469.svg)](https://asciinema.org/a/447469)
