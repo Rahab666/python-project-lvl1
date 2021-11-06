@@ -1,66 +1,58 @@
 from random import randint
-import prompt
+from brain_games.games import game_logics
 
 
-def parity_check(a):
+# Create function for parity check integer
+def parity_check(check_int):
     """Check even and return yes or no"""
-    if a % 2 == 0:
+
+    if check_int % 2 == 0:
         return 'yes'
     return 'no'
 
 
+# Logics game
 def parity_game():
     """Play a parity game with the user.
 
     If user answer right is 3 times, then user "win".
     If user answer wrong is 1 times, then user loos and game end."""
 
-    # Create short answer variables
+    # Condition game
     condition = 'Answer "yes" if the number is even, otherwise answer "no".'
-    wrong = 'is wrong answer ;(. Correct answer was'
-    again = "Let's try again,"
-    welcome = 'Welcome to the Brain Games!'
-    r_u_name = 'May I have your name?'
 
     # Greeting user
-    name = prompt.string('{0}\n{1} '.format(welcome, r_u_name))
-    print('Hello, {0}\n{1}'.format(name, condition))
+    hello_name = game_logics.welcome_user()
+    print('{0} {1}\n{2}'.format(hello_name[0],
+                                hello_name[1], condition))
 
-    # Create random int and check parity
+    # Set by the counter value
     correct_answer = 0
-    chance_number = randint(1, 100)
-    check_even_chance_number = parity_check(chance_number)
 
-    # Ask user the question
-    print('Question: {0}'.format(chance_number))
+    while correct_answer < 3:
 
-    # User answer
-    user_answer = prompt.string('Your answer: ')
-
-    # If user write wrong answer
-    if user_answer.casefold() != check_even_chance_number:
-        return print("'{0}' {1} '{2}'.\n{3} {4}!".format(
-            user_answer.casefold(), wrong,
-            check_even_chance_number, again, name))
-
-    # If user write correct answer
-    while correct_answer < 2:
-        print('Correct!')
-
-        # Repeat for cycle
+        # Create random int and check parity
         chance_number = randint(1, 100)
-        check_even_chance_number = parity_check(chance_number)
+        right_answer = parity_check(chance_number)
 
-        print('Question: {0}'.format(chance_number))
+        # Ask a Question
+        game_logics.question(chance_number)
 
-        user_answer = prompt.string('Your answer: ')
+        # User answer
+        user_answer = game_logics.user_answer()
 
-        if user_answer.casefold() != check_even_chance_number:
-            return print("'{0}' {1} '{2}'.\n{3} {4}!".format(
-                user_answer.casefold(), wrong,
-                check_even_chance_number, again, name))
+        # Comprasion of answers, if user answer - 'wrong', then end game
+        right_or_wrong = game_logics.comparison_of_answers(
+            user_answer, right_answer, hello_name[1])
 
-        correct_answer += 1
+        # If user answer right
+        if right_or_wrong == 'Correct!':
+            print(right_or_wrong)
+            correct_answer += 1
+
+        # If user answer wrong
+        elif right_or_wrong != 'Correct!':
+            return print(right_or_wrong)
 
     # User win
-    return print('Congratulations, {0}!'.format(name))
+    return print('Congratulations, {0}!'.format(hello_name[1]))
