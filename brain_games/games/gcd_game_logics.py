@@ -2,29 +2,27 @@ import random
 from brain_games.games import game_logics
 
 
-# Create function for calculation random values
-def random_expression(init_1, init_2, random_operator):
-    """Accepts 2 random numbers, random operator(+,-,*).
+# Create function for find gcd random numbers
+def gcd_random_integers(integer_1, integer_2):
+    """Accepts 2 random numbers, return gcd given numbers"""
 
-    Return result calculation"""
+    while integer_1 != 0 and integer_2 != 0:
+        if integer_1 > integer_2:
+            integer_1 = integer_1 % integer_2
+        else:
+            integer_2 = integer_2 % integer_1
 
-    if random_operator == '+':
-        return init_1 + init_2
-    elif random_operator == '-':
-        return init_1 - init_2
-    elif random_operator == '*':
-        return init_1 * init_2
+    return integer_1 + integer_2
 
 
 # Logics game
-def calc_game():
-    """Play a calculate game with the user.
+def gcd_game():
+    """Play a parity game with the user.
 
     If user answer right is 3 times, then user "win".
     If user answer wrong is 1 times, then user loos and game end."""
 
-    # Condition game
-    condition = 'What is the result of the expression?'
+    condition = "Find the greatest common divisor of given numbers."
 
     # Greeting user
     hello_name = game_logics.welcome_user()
@@ -36,17 +34,14 @@ def calc_game():
 
     while correct_answer < 3:
 
-        # Create random ints, operator and calculation expression
-        operators = ('+-*')
-        init_1 = random.randint(1, 100)
-        init_2 = random.randint(1, 100)
-        random_operator = random.choice(operators)
-        chance_expression = '{0} {1} {2}'.format(
-                                            init_1, random_operator, init_2)
-        right_answer = random_expression(init_1, init_2, random_operator)
+        # Create random ints and find gcd ints
+        random_integer_1 = random.randint(1, 100)
+        random_integer_2 = random.randint(1, 100)
+        right_answer = gcd_random_integers(random_integer_1, random_integer_2)
+        chance_2_numbers = '{0} {1}'.format(random_integer_1, random_integer_2)
 
         # Ask a Question
-        game_logics.question(chance_expression)
+        game_logics.question(chance_2_numbers)
 
         # User answer
         user_answer = game_logics.user_answer()
