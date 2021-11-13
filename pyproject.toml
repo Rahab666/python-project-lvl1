@@ -1,8 +1,12 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "Five games that test basic math knowledge."
 authors = ["Rahab666 <marsdoghelena@gmail.com>"]
+repository = "https://github.com/Rahab666/python-project-lvl1"
+classifiers = [
+    "Topic :: Games/Entertainment :: Puzzle Games",
+]
 packages = [
   { include = "brain_games" },
 ]

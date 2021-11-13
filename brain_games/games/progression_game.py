@@ -34,12 +34,13 @@ def exclusion_sequence_member(progression, random_number):
     result = ''
     progression_length = len(progression) - 1
     index_progression = 0
+    SKIP = '..'
 
     while index_progression <= progression_length:
         if index_progression != random_number:
-            result += '{0} '.format(progression[index_progression])
+            result += f'{progression[index_progression]} '
         elif index_progression == random_number:
-            result += '{0} '.format('..')
+            result += f'{SKIP} '
         index_progression += 1
 
     return result

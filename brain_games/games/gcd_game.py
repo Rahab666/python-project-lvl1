@@ -25,6 +25,6 @@ def game():
     random_integer_1 = random.randint(1, 100)
     random_integer_2 = random.randint(1, 100)
     right_answer = gcd_random_integers(random_integer_1, random_integer_2)
-    chance_2_numbers = '{0} {1}'.format(random_integer_1, random_integer_2)
+    chance_2_numbers = f'{random_integer_1} {random_integer_2}'
 
     return chance_2_numbers, right_answer

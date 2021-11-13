@@ -28,8 +28,7 @@ def game():
     init_1 = random.randint(1, 100)
     init_2 = random.randint(1, 100)
     random_operator = random.choice(operators)
-    chance_expression = '{0} {1} {2}'.format(
-        init_1, random_operator, init_2)
+    chance_expression = f'{init_1} {random_operator} {init_2}'
     right_answer = random_expression(init_1, init_2, random_operator)
 
     return chance_expression, right_answer

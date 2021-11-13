@@ -10,9 +10,8 @@ def comparison_of_answers(user_answer, right_answer, name):
     AGAIN = "Let's try again,"
 
     if user_answer.casefold() != right_answer:
-        return "'{0}' {1} '{2}'.\n{3} {4}!".format(
-            user_answer.casefold(), WRONG,
-            right_answer, AGAIN, name)
+        return f"""'{ user_answer.casefold()}' {WRONG} '{right_answer}'.
+{AGAIN} {name}!"""
 
     return 'Correct!'
 
@@ -27,8 +26,7 @@ def logics(game):
     # Greeting user
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
-    print('{0} {1}\n{2}'.format('Hello,',
-                                name, game.CONDITION))
+    print(f'Hello, {name}\n{game.CONDITION}')
 
     # Set by the counter value
     correct_answer = 0
@@ -40,7 +38,7 @@ def logics(game):
         question, right_answer = game.game()
 
         # Ask a Question
-        print('Question: {0}'.format(question))
+        print(f'Question: {question}')
 
         # User answer
         user_answer = prompt.string('Your answer: ')
@@ -59,4 +57,4 @@ def logics(game):
             return print(right_or_wrong)
 
     # User win
-    return print('Congratulations, {0}!'.format(name))
+    return print(f'Congratulations, {name}!')
