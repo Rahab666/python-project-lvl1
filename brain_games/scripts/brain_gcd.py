@@ -1,10 +1,10 @@
-from brain_games.games import gcd_game_logics
+from brain_games.games import gcd_game
 
 
 def main():
     """Start brain gcd game"""
 
-    gcd_game_logics.gcd_game()
+    gcd_game.gcd_game()
 
 
 if __name__ == '__main__':

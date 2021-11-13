@@ -1,5 +1,5 @@
 from random import randint
-from brain_games.games import game_logics
+from brain_games import game_logics
 
 
 # Create function for parity check integer

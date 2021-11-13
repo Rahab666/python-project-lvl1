@@ -1,5 +1,5 @@
 import random
-from brain_games.games import game_logics
+from brain_games import game_logics
 
 
 # Create function for calculation random values
