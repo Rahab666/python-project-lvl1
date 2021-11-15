@@ -10,11 +10,12 @@ The first project written for the academic purposes of a course on learning a pr
 Brain Games is a puzzle game that tests basic math knowledge.
 
 The project consists of 5 mini-games:
-gcd-game - tests your knowledge to find the greatest common divisors.
-prime-game - checks if you know what prime numbers are.
-progression-game - checks if you know what an arithmetic progression is.
-even-game - checks if you know what even numbers are.
-calc-game - checks if you know how to solve basic mathematical expressions.
+
+- gcd-game - tests your knowledge to find the greatest common divisors.
+- prime-game - checks if you know what prime numbers are.
+- progression-game - checks if you know what an arithmetic progression is.
+- even-game - checks if you know what even numbers are.
+- calc-game - checks if you know how to solve basic mathematical expressions.
 
 ### Asciinema brain-even
 [![asciicast brain-even](https://asciinema.org/a/447094.svg)](https://asciinema.org/a/447094)
