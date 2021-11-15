@@ -1,34 +1,30 @@
 import random
 
 
-# Create function for calculation random values
-def random_expression(init_1, init_2, random_operator):
+def calculate(number_1, number_2, operator):
     """Accepts 2 random numbers, random operator(+,-,*).
 
     Return result calculation"""
 
-    if random_operator == '+':
-        return init_1 + init_2
-    elif random_operator == '-':
-        return init_1 - init_2
-    elif random_operator == '*':
-        return init_1 * init_2
+    if operator == '+':
+        return number_1 + number_2
+    elif operator == '-':
+        return number_1 - number_2
+    elif operator == '*':
+        return number_1 * number_2
 
 
-# Condition game
-CONDITION = 'What is the result of the expression?'
+DESCRIPTION = 'What is the result of the expression?'
 
 
-# Logics game
-def game():
+def generate_question_and_answer():
     """Play a calculate game with the user."""
 
-    # Create random ints, operator and calculation expression
     operators = ('+-*')
-    init_1 = random.randint(1, 100)
-    init_2 = random.randint(1, 100)
+    number_1 = random.randint(1, 100)
+    number_2 = random.randint(1, 100)
     random_operator = random.choice(operators)
-    chance_expression = f'{init_1} {random_operator} {init_2}'
-    right_answer = random_expression(init_1, init_2, random_operator)
+    chance_expression = f'{number_1} {random_operator} {number_2}'
+    right_answer = calculate(number_1, number_2, random_operator)
 
     return chance_expression, right_answer

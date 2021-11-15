@@ -1,60 +1,33 @@
 import prompt
 
 
-def comparison_of_answers(user_answer, right_answer, name):
-    """Accept username, user answer, right answer and comparison answers.
-
-    If answers equally, return 'Correct!'"""
-
-    WRONG = 'is wrong answer ;(. Correct answer was'
-    AGAIN = "Let's try again,"
-
-    if user_answer.casefold() != right_answer:
-        return f"""'{ user_answer.casefold()}' {WRONG} '{right_answer}'.
-{AGAIN} {name}!"""
-
-    return 'Correct!'
-
-
-# Logics game
 def logics(game):
     """Play a game with the user.
 
     If user answer right is 3 times, then user "win".
     If user answer wrong is 1 times, then user loos and game end."""
 
-    # Greeting user
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}\n{game.CONDITION}')
+    print(f'Hello, {name}\n{game.DESCRIPTION}')
 
-    # Set by the counter value
-    correct_answer = 0
     RAUNDS = 3
+    WRONG = 'is wrong answer ;(. Correct answer was'
+    AGAIN = "Let's try again,"
 
-    while correct_answer < RAUNDS:
+    for correct_answer in range(RAUNDS):
 
-        # Create random answer and question
-        question, right_answer = game.game()
+        question, right_answer = game.generate_question_and_answer()
 
-        # Ask a Question
         print(f'Question: {question}')
 
-        # User answer
         user_answer = prompt.string('Your answer: ')
 
-        # Comprasion of answers, if user answer - 'wrong', then end game
-        right_or_wrong = comparison_of_answers(
-            user_answer, str(right_answer), name)
+        if str(right_answer) == user_answer.casefold():
+            print('Correct!')
 
-        # If user answer right
-        if right_or_wrong == 'Correct!':
-            print(right_or_wrong)
-            correct_answer += 1
+        else:
+            return print(f"""'{user_answer.casefold()}' {WRONG} '{right_answer}'.
+{AGAIN} {name}!""")
 
-        # If user answer wrong
-        elif right_or_wrong != 'Correct!':
-            return print(right_or_wrong)
-
-    # User win
-    return print(f'Congratulations, {name}!')
+    print(f'Congratulations, {name}!')
