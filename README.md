@@ -5,7 +5,7 @@
 
 # Brain Games
 
-The first project written for the academic purposes of a course on learning a programming language Python.
+The first project written for the academic purposes of a Hexlet's course on learning a programming language Python.
 
 Brain Games is a puzzle game that tests basic math knowledge.
 
