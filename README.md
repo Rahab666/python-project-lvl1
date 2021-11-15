@@ -8,6 +8,7 @@
 The first project written for the academic purposes of a course on learning a programming language Python.
 
 Brain Games is a puzzle game that tests basic math knowledge.
+
 The project consists of 5 mini-games:
 gcd-game - tests your knowledge to find the greatest common divisors.
 prime-game - checks if you know what prime numbers are.
