@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from brain_games.games import progression_game
 from brain_games.game_logics import logics
 
