@@ -1,6 +1,9 @@
 import random
 
 
+DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
+
 def is_prime(random_integer):
     """Check prime and return yes or no"""
 
@@ -17,13 +20,10 @@ def is_prime(random_integer):
     return True
 
 
-DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-
-
 def generate_question_and_answer():
     """Play a prime game with the user."""
 
-    chance_number = random.randint(1, 300)
-    right_answer = 'yes' if is_prime(chance_number) else 'no'
+    question = random.randint(1, 300)
+    answer = 'yes' if is_prime(question) else 'no'
 
-    return chance_number, right_answer
+    return question, answer

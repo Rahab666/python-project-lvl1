@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 from brain_games.games import progression_game
-from brain_games.game_logics import logics
+from brain_games.engine import start
 
 
 def main():
     """Start brain progression game"""
 
-    logics(progression_game)
+    start(progression_game)
 
 
 if __name__ == '__main__':

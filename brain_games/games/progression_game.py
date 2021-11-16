@@ -1,40 +1,40 @@
 import random
 
 
-def random_progression():
+DESCRIPTION = "What number is missing in the progression?"
+
+
+def random_progression(first, difference, length):
     """Create random progression without one member.
 
     return skip number, result"""
 
-    first = random.randint(1, 100)
-    difference = random.randint(1, 100)
-    length = random.randint(5, 10)
     end = first + length * difference
     progression = range(first, end, difference)
 
-    result = ''
-    progression_length = len(progression) - 1
-    index_progression = 0
-    SKIP = '..'
-    hidden_number = random.randint(0, len(progression) - 1)
-    skip_number = progression[hidden_number]
-
-    while index_progression <= progression_length:
-        if index_progression != hidden_number:
-            result += f'{progression[index_progression]} '
-        elif index_progression == hidden_number:
-            result += f'{SKIP} '
-        index_progression += 1
-
-    return skip_number, result
-
-
-DESCRIPTION = "What number is missing in the progression?"
+    return progression
 
 
 def generate_question_and_answer():
     """Play a progression game with the user."""
 
-    right_answer, result = random_progression()
+    first = random.randint(1, 100)
+    difference = random.randint(1, 100)
+    length = random.randint(5, 10)
 
-    return result, right_answer
+    progression = random_progression(first, difference, length)
+
+    question = ''
+    progression_length = len(progression) - 1
+    index_progression = 0
+    hidden_number = random.randint(0, len(progression) - 1)
+    answer = progression[hidden_number]
+
+    while index_progression <= progression_length:
+        if index_progression != hidden_number:
+            question += f'{progression[index_progression]} '
+        elif index_progression == hidden_number:
+            question += '.. '
+        index_progression += 1
+
+    return question, answer

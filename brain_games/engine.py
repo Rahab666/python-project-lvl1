@@ -1,7 +1,7 @@
 import prompt
 
 
-def logics(game):
+def start(game):
     """Play a game with the user.
 
     If user answer right is 3 times, then user "win".
@@ -11,11 +11,9 @@ def logics(game):
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}\n{game.DESCRIPTION}')
 
-    RAUNDS = 3
-    WRONG = 'is wrong answer ;(. Correct answer was'
-    AGAIN = "Let's try again,"
+    NUMBER_OF_ROUNDS = 3
 
-    for correct_answer in range(RAUNDS):
+    for correct_answer in range(NUMBER_OF_ROUNDS):
 
         question, right_answer = game.generate_question_and_answer()
 
@@ -27,7 +25,10 @@ def logics(game):
             print('Correct!')
 
         else:
-            return print(f"""'{user_answer.casefold()}' {WRONG} '{right_answer}'.
-{AGAIN} {name}!""")
+            print("""'{0}' is wrong answer ;(. Correct answer was '{1}'.
+Let's try again, {2}!""".format(
+                user_answer.casefold(), right_answer, name
+            ))
+            return
 
     print(f'Congratulations, {name}!')

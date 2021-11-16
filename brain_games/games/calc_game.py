@@ -1,6 +1,9 @@
 import random
 
 
+DESCRIPTION = 'What is the result of the expression?'
+
+
 def calculate(number_1, number_2, operator):
     """Accepts 2 random numbers, random operator(+,-,*).
 
@@ -14,9 +17,6 @@ def calculate(number_1, number_2, operator):
         return number_1 * number_2
 
 
-DESCRIPTION = 'What is the result of the expression?'
-
-
 def generate_question_and_answer():
     """Play a calculate game with the user."""
 
@@ -24,7 +24,7 @@ def generate_question_and_answer():
     number_1 = random.randint(1, 100)
     number_2 = random.randint(1, 100)
     random_operator = random.choice(operators)
-    chance_expression = f'{number_1} {random_operator} {number_2}'
-    right_answer = calculate(number_1, number_2, random_operator)
+    question = f'{number_1} {random_operator} {number_2}'
+    answer = calculate(number_1, number_2, random_operator)
 
-    return chance_expression, right_answer
+    return question, answer
