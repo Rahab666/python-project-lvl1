@@ -4,7 +4,7 @@ import random
 DESCRIPTION = "What number is missing in the progression?"
 
 
-def random_progression(first, difference, length):
+def generate_progression(first, difference, length):
     """Create random progression without one member.
 
     return skip number, result"""
@@ -22,7 +22,7 @@ def generate_question_and_answer():
     difference = random.randint(1, 100)
     length = random.randint(5, 10)
 
-    progression = random_progression(first, difference, length)
+    progression = generate_progression(first, difference, length)
 
     question = ''
     progression_length = len(progression) - 1

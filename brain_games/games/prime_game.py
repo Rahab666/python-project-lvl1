@@ -15,8 +15,7 @@ def is_prime(random_integer):
     while counter < random_integer:
         if random_integer % counter != 0:
             counter += 1
-        elif random_integer % counter == 0:
-            return False
+        return False
     return True
 
 
