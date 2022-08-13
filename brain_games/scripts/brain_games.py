@@ -1,11 +1,14 @@
 #!/usr/bin/env python
+"""Main script."""
 from brain_games import cli
+from brain_games.engine import start
 
 
 def main():
-    """Return greeting in the game"""
+    """Start brain games."""
+    args = cli.parse()
 
-    cli.welcome_user()
+    start(args.game)
 
 
 if __name__ == '__main__':

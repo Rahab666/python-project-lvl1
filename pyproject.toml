@@ -1,9 +1,9 @@
 [tool.poetry]
-name = "hexlet-code"
+name = "brain_games"
 version = "0.1.0"
 description = "Five games that test basic math knowledge."
-authors = ["Rahab666 <marsdoghelena@gmail.com>"]
-repository = "https://github.com/Rahab666/python-project-lvl1"
+authors = ["sudobooo <marsdoghelena@gmail.com>"]
+repository = "https://github.com/sudobooo/brain-games"
 classifiers = [
     "Topic :: Games/Entertainment :: Puzzle Games",
 ]
@@ -12,19 +12,19 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10.5"
 prompt = "^0.4.1"
 
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
-brain-even = "brain_games.scripts.brain_even:main"
-brain-calc = "brain_games.scripts.brain_calc:main"
-brain-gcd = "brain_games.scripts.brain_gcd:main"
-brain-progression = "brain_games.scripts.brain_progression:main"
-brain-prime = "brain_games.scripts.brain_prime:main"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^4.0.1"
+pytest = "^7.1.2"
+pytest-cov = "^3.0.0"
+
+[tool.isort]
+skip = ["brain_games",]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
