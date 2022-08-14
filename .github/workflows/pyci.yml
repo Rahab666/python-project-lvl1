@@ -1,4 +1,4 @@
-name: python-project-lvl1
+name: Python CI
 
 on:
   - push

@@ -1,29 +1,36 @@
+"""Logic of the calculated game."""
+
 import random
+
+import numpy
+
+system_random = random.SystemRandom()
 
 DESCRIPTION = 'What is the result of the expression?'
 
 
-def calculate(number_1, number_2, operator):
-    """Accepts 2 random numbers, random operator(+,-,*).
+def calculate(operator, *numbers):
+    """Accept 2 random numbers and random operator(+,-,*).
 
-    Return result calculation"""
+    Return result calculation.
+    """
+    expressions = {
+        '+': numpy.sum(list(numbers)),
+        '-': numpy.subtract(*numbers),
+        '*': numpy.multiply(*numbers),
+    }
 
-    if operator == '+':
-        return number_1 + number_2
-    elif operator == '-':
-        return number_1 - number_2
-    elif operator == '*':
-        return number_1 * number_2
+    return expressions.get(operator)
 
 
 def generate_question_and_answer():
-    """Play a calculate game with the user."""
+    """Return question and answer for the calculated game."""
+    operators = '+-*'
+    first_number = system_random.randint(1, 100)
+    second_number = system_random.randint(1, 100)
+    random_operator = system_random.choice(operators)
 
-    operators = ('+-*')
-    number_1 = random.randint(1, 100)
-    number_2 = random.randint(1, 100)
-    random_operator = random.choice(operators)
-    question = f'{number_1} {random_operator} {number_2}'
-    answer = calculate(number_1, number_2, random_operator)
+    answer = calculate(random_operator, first_number, second_number)
+    question = f'{first_number} {random_operator} {second_number}'
 
     return question, answer

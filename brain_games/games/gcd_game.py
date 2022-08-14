@@ -1,26 +1,19 @@
+"""Logic of the gcd game."""
 import random
 
-DESCRIPTION = "Find the greatest common divisor of given numbers."
+import numpy
 
+system_random = random.SystemRandom()
 
-def calculate_gcd(integer_1, integer_2):
-    """Accepts 2 random numbers, return gcd given numbers"""
-
-    while integer_1 != 0 and integer_2 != 0:
-        if integer_1 > integer_2:
-            integer_1 = integer_1 % integer_2
-        else:
-            integer_2 = integer_2 % integer_1
-
-    return integer_1 + integer_2
+DESCRIPTION = 'Find the greatest common divisor of given numbers.'
 
 
 def generate_question_and_answer():
-    """Play a gcd game with the user."""
+    """Return question and answer for the gcd game."""
+    first_number = system_random.randint(1, 100)
+    second_number = system_random.randint(1, 100)
 
-    random_integer_1 = random.randint(1, 100)
-    random_integer_2 = random.randint(1, 100)
-    answer = calculate_gcd(random_integer_1, random_integer_2)
-    question = f'{random_integer_1} {random_integer_2}'
+    answer = numpy.gcd(first_number, second_number)
+    question = f'{first_number} {second_number}'
 
     return question, answer

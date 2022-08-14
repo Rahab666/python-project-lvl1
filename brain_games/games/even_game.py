@@ -1,12 +1,17 @@
-from random import randint
+"""Logic of the even game."""
+
+import random
+
+system_random = random.SystemRandom()
 
 DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def generate_question_and_answer():
-    """Play a parity game with the user."""
+    """Return question and answer for the even game."""
+    number = system_random.randint(1, 100)
 
-    chance_number = randint(1, 100)
-    right_answer = 'no' if chance_number % 2 else 'yes'
+    answer = 'no' if number % 2 else 'yes'
+    question = number
 
-    return chance_number, right_answer
+    return question, answer
