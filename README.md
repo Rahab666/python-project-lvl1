@@ -1,6 +1,6 @@
-### Hexlet tests and linter status:
-[![Maintainability](https://api.codeclimate.com/v1/badges/73b6298f3302a1d1d5e7/maintainability)](https://codeclimate.com/github/Rahab666/python-project-lvl1/maintainability)
+### Tests and linter status:
 [![Python CI](https://github.com/sudobooo/brain-games/actions/workflows/pyci.yml/badge.svg)](https://github.com/sudobooo/brain-games/actions/workflows/pyci.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/73b6298f3302a1d1d5e7/maintainability)](https://codeclimate.com/github/Rahab666/python-project-lvl1/maintainability)
 
 # Brain Games
 
