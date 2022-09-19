@@ -4,7 +4,7 @@ import sys
 
 from brain_games import cli
 from brain_games.engine import start
-from brain_games.exceptions import WrongAnswerException
+from brain_games.exceptions import WrongAnswerError
 
 
 def main():
@@ -13,7 +13,7 @@ def main():
 
     try:
         start(args.game)
-    except WrongAnswerException:
+    except WrongAnswerError:
         sys.exit(1)
 
 

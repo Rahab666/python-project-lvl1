@@ -2,7 +2,7 @@
 import logging.config
 
 import prompt
-from brain_games.exceptions import WrongAnswerException
+from brain_games.exceptions import WrongAnswerError
 from brain_games.games import (calc_game, even_game, gcd_game, prime_game,
                                progression_game)
 from brain_games.log_config import LOGGING_CONFIG, log_error, log_info
@@ -40,14 +40,14 @@ def start(game_name):
 
         user_answer = prompt.string('Your answer: ')
 
-        if str(right_answer) == user_answer.lower():
+        if right_answer == user_answer.lower():
             log_info.info('Correct!')
         else:
             log_info.info(f"'{user_answer.lower()}' is wrong answer ;(\n"
                           f"Correct answer was '{right_answer}'. "
                           f"Let's try again, {name}!")
 
-            error = WrongAnswerException(game_name.capitalize())
+            error = WrongAnswerError(game_name.capitalize())
             log_error.error(error)
             raise error
 

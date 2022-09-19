@@ -1,7 +1,7 @@
 """Custom exceptions for brain_games."""
 
 
-class WrongAnswerException(Exception):
+class WrongAnswerError(Exception):
     """Raised if the answer is incorrect."""
 
     def __init__(self, game_name):

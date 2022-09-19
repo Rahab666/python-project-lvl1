@@ -12,6 +12,6 @@ def generate_question_and_answer():
     number = system_random.randint(1, 100)
 
     answer = 'no' if number % 2 else 'yes'
-    question = number
+    question = str(number)
 
     return question, answer

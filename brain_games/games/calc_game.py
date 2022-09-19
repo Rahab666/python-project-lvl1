@@ -30,7 +30,7 @@ def generate_question_and_answer():
     second_number = system_random.randint(1, 100)
     random_operator = system_random.choice(operators)
 
-    answer = calculate(random_operator, first_number, second_number)
+    answer = str(calculate(random_operator, first_number, second_number))
     question = f'{first_number} {random_operator} {second_number}'
 
     return question, answer
