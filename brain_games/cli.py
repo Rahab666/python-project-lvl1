@@ -6,7 +6,11 @@ import argparse
 def parse():  # pragma: no cover
     """Parse arguments from CLI.
 
-    Return arguments as a string.
+    Returns
+    -------
+    args
+        Namespace that can be used in the game when using the CLI.
+
     """
     parser = argparse.ArgumentParser(
         description='description: the game that tests basic math knowledge.',

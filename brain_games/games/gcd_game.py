@@ -15,10 +15,10 @@ def generate_question_and_answer():
     -------
     Union[str, str]
         Tuple containing:
-            question : str
-                Two randomly generated ints.
-            answer : str
-                The GCD of the ints that are in question.
+            question
+                Two randomly generated nums.
+            answer
+                The GCD of the nums that are in question.
 
     """
     first_number = system_random.randint(1, 100)

@@ -24,7 +24,18 @@ def start(game_name):
     """Play a game with the user.
 
     If user answer right is 3 times, then user "win".
-    If user answer wrong is 1 times, then user loos and game end.
+
+    Parameters
+    ----------
+    game_name : str
+        The game the user has selected.
+
+    Raises
+    ------
+    error
+        If user answer wrong is 1 times,
+        then user "loos" and raise WrongAnswerError.
+
     """
     game = GAMES.get(game_name.lower())
 

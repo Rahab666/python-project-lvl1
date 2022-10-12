@@ -12,7 +12,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10.5"
 prompt = "^0.4.1"
 numpy = "^1.23.2"
 sympy = "^1.10.1"
@@ -21,7 +21,20 @@ sympy = "^1.10.1"
 brain-games = "brain_games.scripts.brain_games:main"
 
 [tool.poetry.dev-dependencies]
-flake8 = "^4.0.1"
+flake8 = "^5.0.4"
+flake8-bandit = "^4.1.1"
+flake8-broken-line = "^0.6.0"
+flake8-bugbear = "^22.9.23"
+flake8-commas = "^2.1.0"
+flake8-comprehensions = "^3.10.0"
+flake8-debugger = "^4.1.2"
+flake8-docstrings = "^1.6.0"
+flake8-eradicate = "^1.4.0"
+flake8-polyfill = "^1.0.2"
+flake8-quotes = "^3.3.1"
+flake8-rst-docstrings = "^0.2.7"
+flake8-string-format = "^0.3.0"
+darglint = "^1.8.1"
 pytest = "^7.1.2"
 pytest-cov = "^3.0.0"
 

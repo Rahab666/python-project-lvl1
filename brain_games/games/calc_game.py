@@ -12,7 +12,19 @@ DESCRIPTION = 'What is the result of the expression?'
 def calculate(operator, *numbers):
     """Accept 2 random numbers and random operator(+,-,*).
 
-    Return result calculation.
+    Parameters
+    ----------
+    operator : str
+        The operator to perform an arithmetic operation.
+        It can be '+', '-' or '*'.
+    numbers : int
+        Numbers with which to perform an arithmetic operation.
+
+    Returns
+    -------
+    result : int
+        The result of an arithmetic operation.
+
     """
     expressions = {
         '+': numpy.sum(list(numbers)),
@@ -20,11 +32,24 @@ def calculate(operator, *numbers):
         '*': numpy.multiply(*numbers),
     }
 
-    return expressions.get(operator)
+    result = expressions.get(operator)
+
+    return result
 
 
 def generate_question_and_answer():
-    """Return question and answer for the calculated game."""
+    """Return question and answer for the calculated game.
+
+    Returns
+    -------
+    Union[str, str]
+        Tuple containing:
+            question
+                A random arithmetic expression with two nums and one operator.
+            answer
+                The num that is missing in the arithmetic progression.
+
+    """
     operators = '+-*'
     first_number = system_random.randint(1, 100)
     second_number = system_random.randint(1, 100)

@@ -14,11 +14,10 @@ def generate_question_and_answer():
     -------
     Union[str, str]
         Tuple containing:
-            question : str
-                One randomly generated int.
-            answer : str
-                If the int that is in question is prime,
-                then 'yes', otherwise 'no'.
+            question
+                One random arithmetic progression with one missing num.
+            answer
+                The num that is missing in the arithmetic progression.
 
     """
     first = system_random.randint(1, 100)
